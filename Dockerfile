@@ -1,3 +1,7 @@
 FROM jenkinsci/slave
 
-RUN apk add --update --no-cache ant
+USER root
+
+RUN apt-get update && apt-get install -y ant
+
+USER jenkins
